@@ -31,7 +31,7 @@ describe DockingStation do
   end
 
   it "does not let me dock a new bike when there's already one" do
-    20.times do subject.dock(Bike.new) end
+    subject.DEFAULT_CAPACITY.times do subject.dock(Bike.new) end
     expect { subject.dock(Bike.new) }.to raise_error("Cannot dock bike, station full.")
   end
 end
